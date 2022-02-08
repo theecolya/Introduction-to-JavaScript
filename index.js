@@ -118,28 +118,28 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(age,weight){
+function hungryDog(weight,age){
   if (age >= 1 && weight <= 5) {
     return weight * .05
-  } else if (age >= 1 && weight - 5 < 10) {
+  } else if (age >= 1 && weight >= 6 && weight <= 10) {
     return weight * .04
-  } else if (age >= 1 && weight - 10 < 15) {
+  } else if (age >= 1 && weight >= 11 && weight <= 15) {
     return weight * .03
   } else if (age >= 1 && weight > 15) {
-    return weight * .20
+    return weight * .02
   };
   if (age < 1) {
-    if (age > .15 && age < .33) {
+    if (age >= .15 && age <= .33) {
       return weight * .10
-    } else if (age > .33 && age < .58) {
+    } else if (age > .33 && age <= .58) {
       return weight * .05
-    } else if (age > .58 && age < .99) {
+    } else if (age > .58 && age <= .99) {
       return weight * .04
     }
   }
 }
 
-console.log(hungryDog(1,15))
+console.log(hungryDog(15,1))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -225,7 +225,7 @@ Using the feet function below do the following:
 */
 
 function feet(cm) {
-  return cm * 30.48
+  return cm / 30.48
 }
 
 console.log(feet(1))
@@ -242,10 +242,9 @@ Using the annoyingSong function below do the following:
 
 function annoyingSong(startNum) {
   for (startNum; startNum < 99 && startNum > 0; startNum--) {
-    console.log(`${startNum} bottles of soda on the wall, ${startNum} bottles of soda, take one down pass it around ${startNum-1} bottles of soda on the wall'`)
+    console.log(`${startNum} bottles of soda on the wall, ${startNum} bottles of soda, take one down pass it around ${startNum - 1} bottles of soda on the wall`);  
   }
 }
-  console.log(annoyingSong(1))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
