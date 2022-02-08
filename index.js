@@ -165,9 +165,39 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
-  /*add your code here*/
+let computerChoice = Math.random();
+
+if (computerChoice < 0.34) {
+    computerChoice = 'rock';
+} else if(computerChoice <= 0.67) {
+    computerChoice = 'paper';
+} else {
+    computerChoice = 'scissors';
 }
+
+function game(user,computerChoice) {
+  if (user === 'rock' && computerChoice === 'rock') {
+    return 'it\'s a tie'
+  } else if (user === 'rock' && computerChoice === 'paper') {
+    return 'you lose!'
+  } else if (user === 'rock' && computerChoice === 'scissors') {
+    return 'you win!'
+  } else if (user === 'paper' && computerChoice === 'paper') {
+    return 'it\'s a tie'
+  } else if (user === 'paper' && computerChoice === 'rock') {
+    return 'you win!'
+  } else if (user === 'paper' && computerChoice === 'scissors') {
+    return 'you lose!'
+  } else if (user === 'scissors' && computerChoice === 'rock') {
+    return 'you lose!'
+  } else if (user === 'scissors' && computerChoice === 'paper') {
+    return 'you win!'
+  } else if (user === 'scissors' && computerChoice === 'scissors') {
+    return 'it\'s a tie'
+  }
+}
+
+console.log(game('rock', computerChoice))
 
 
 
@@ -182,12 +212,10 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(kilo){
+  return kilo * .621371
 }
-
-
-
+console.log(miles(1))
 //Task 5b - Feet to CM
 /*
 Using the feet function below do the following:
@@ -196,11 +224,11 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm) {
+  return cm * 30.48
 }
 
-
+console.log(feet(1))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -212,9 +240,12 @@ Using the annoyingSong function below do the following:
     "{number you gave as an argument} bottles of soda on the wall, {number you gave as an argument} bottles of soda, take one down pass it around {number you gave as an argument minus 1} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(startNum) {
+  for (startNum; startNum < 99 && startNum > 0; startNum--) {
+    console.log(`${startNum} bottles of soda on the wall, ${startNum} bottles of soda, take one down pass it around ${startNum-1} bottles of soda on the wall'`)
+  }
 }
+  console.log(annoyingSong(1))
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -232,10 +263,20 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(gradeNum){
+if (gradeNum >= 90) {
+  return 'you got an A'
+} else if (gradeNum >= 80 && gradeNum <= 89) {
+  return 'you got a B'
+} else if (gradeNum >= 70 && gradeNum <= 79) {
+  return 'you got a C'
+} else if (gradeNum >= 60 && gradeNum <= 69) {
+  return 'you got a D'
+} else {
+  return 'you got an F'
 }
-
+}
+console.log(grade(95))
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
